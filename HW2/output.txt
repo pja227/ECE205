@@ -1,0 +1,2 @@
+The average score is: 78.00
+The standard deviation is: 25.92
