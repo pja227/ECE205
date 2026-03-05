@@ -7,27 +7,33 @@
 
 using namespace std;
 
-void input(int int1, int int2);
-void conversion(int int1, int int2, char& AMPM);
+void input(int& int1, int& int2);
+void conversion(int& int1, char& AMPM);
 void output(int int1, int int2, char AMPM);
 
 int main() {
     int int1, int2;
     char AMPM;
+    char userChoice;
 
-    input(int1, int2);
-    conversion(int1, int2, AMPM);
-    output(int1, int2, AMPM);
+    do {
+        input(int1, int2);
+        conversion(int1, AMPM);
+        output(int1, int2, AMPM);
+
+        cout << "\nWould you like to convert another time? (y/n): ";
+        cin >> userChoice;
+    } while (userChoice == 'y');
 }
 
-void input(int int1, int int2) {
+void input(int& int1, int& int2) {
     cout << "Please input the first two digit (0-23): ";
     cin >> int1;
     cout << "Please input the second two digit (0-59): ";
     cin >> int2;
 }
 
-void conversion(int int1, int int2, char& AMPM) {
+void conversion(int& int1, char& AMPM) {
     if (int1 >= 0 && int1 < 24) {
         if (int1 >= 12) {
             AMPM = 'P';
