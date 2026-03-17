@@ -12,7 +12,28 @@ double difficultyInput();
 void judgesInput( int arr[] );
 
 int main() {
-    double 
+    double difficulty = difficultyInput();
+    int judges[7];
+    judgesInput(judges);
+
+
+    /**
+     * Insertion sort
+     */
+    for (int i = 0; i < 7; i++) {
+        int key = judges[i];
+        int j = i - 1;
+
+        while (j >= 0 && judges[j] > key) {
+            judges[j + 1] = judges[j];
+            j--;
+        }
+        judges[j + 1] = key;
+    }
+
+    double sum = judges[1] + judges[2] + judges[3] + judges[4] + judges[5];
+    double score = sum * difficulty * 0.6;
+    cout << fixed << setprecision(2) << "The final score is: " << score << endl;
 
 }
 
