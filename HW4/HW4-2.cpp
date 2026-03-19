@@ -9,11 +9,11 @@
 using namespace std;
 
 double difficultyInput();
-void judgesInput( int arr[] );
+void judgesInput( double arr[] );
 
 int main() {
     double difficulty = difficultyInput();
-    int judges[7];
+    double judges[7];
     judgesInput(judges);
 
 
@@ -21,7 +21,7 @@ int main() {
      * Insertion sort
      */
     for (int i = 0; i < 7; i++) {
-        int key = judges[i];
+        double key = judges[i];
         int j = i - 1;
 
         while (j >= 0 && judges[j] > key) {
@@ -51,7 +51,7 @@ double difficultyInput() {
     return difficulty;
 }
 
-void judgesInput( int arr[] ) {
+void judgesInput( double arr[] ) {
     cout << "Enter 7 real numbers between 0 and 10: ";
 
     for (int i = 0; i < 7; i++) {
